@@ -173,7 +173,7 @@ btnCopyGen.addEventListener("click", async () => {
    ========================================================= */
 
 function isApiConfigured() {
-  return !API_BASE_URL.includes("xn6xrgjogj");
+  return !API_BASE_URL.includes("TU-API-ID");
 }
 
 function setStatus(message, isError = false) {
