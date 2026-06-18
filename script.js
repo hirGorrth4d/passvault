@@ -276,7 +276,7 @@ entryForm.addEventListener("submit", async (e) => {
     username: userInput.value.trim(),
     password: passwordInput.value,
   };
-  if (!payload.site || !payload.user || !payload.password) return;
+  if (!payload.site || !payload.username || !payload.password) return;
 
   try {
     const res = await fetch(API_BASE_URL, {
