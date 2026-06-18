@@ -3,8 +3,8 @@
    Reemplazá esta URL por el endpoint de tu API en AWS
    (API Gateway + Lambda + DynamoDB).
    La API debe exponer:
-     GET    /vault        -> lista de credenciales [{id, site, user, password}]
-     POST   /vault         -> crea una credencial {site, user, password}
+     GET    /vault        -> lista de credenciales [{id, site, username, password}]
+     POST   /vault         -> crea una credencial {site, username, password}
      DELETE /vault/{id}    -> elimina una credencial por id
    ========================================================= */
 const API_BASE_URL = "https://xn6xrgjogj.execute-api.us-east-1.amazonaws.com/vault";
@@ -215,7 +215,7 @@ function buildRow(item) {
   tdSite.textContent = item.site;
 
   const tdUser = document.createElement("td");
-  tdUser.textContent = item.user;
+  tdUser.textContent = item.username;
 
   const tdPass = document.createElement("td");
   const passSpan = document.createElement("span");
@@ -273,7 +273,7 @@ entryForm.addEventListener("submit", async (e) => {
 
   const payload = {
     site: siteInput.value.trim(),
-    user: userInput.value.trim(),
+    username: userInput.value.trim(),
     password: passwordInput.value,
   };
   if (!payload.site || !payload.user || !payload.password) return;
