@@ -7,7 +7,7 @@
      POST   /vault         -> crea una credencial {site, user, password}
      DELETE /vault/{id}    -> elimina una credencial por id
    ========================================================= */
-const API_BASE_URL = "https://TU-API-ID.execute-api.TU-REGION.amazonaws.com/prod/vault";
+const API_BASE_URL = "https://xn6xrgjogj.execute-api.us-east-1.amazonaws.com/vault";
 
 /* =========================================================
    Selectores
@@ -173,7 +173,7 @@ btnCopyGen.addEventListener("click", async () => {
    ========================================================= */
 
 function isApiConfigured() {
-  return !API_BASE_URL.includes("TU-API-ID");
+  return !API_BASE_URL.includes("xn6xrgjogj");
 }
 
 function setStatus(message, isError = false) {
